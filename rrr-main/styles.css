@@ -365,5 +365,54 @@ button:disabled, [role="button"][aria-disabled="true"] {
   --accent-hover: #A8842F;
   --accent-contrast: #0A0A0A;
 }
+/* ===== Mr Gleamz — černo-zlatý motiv ===== */
+:root {
+  --surface-page: #0A0A0A;
+  --surface-card: #16130D;
+  --surface-muted: #16130D;
+  --surface-inverse: #0A0A0A;
+  --text-strong: #FFFFFF;
+  --text-body: #FFFFFF;
+  --text-muted: #A8A29A;
+  --text-on-inverse: #FFFFFF;
+  --border-subtle: #2A2418;
+  --border-strong: #2A2418;
+  --color-neutral-lightest: #2A2418;
+  --color-mongoose-lighter: #2A2214;
+}
 
+body {
+  background: linear-gradient(180deg, #14110A 0%, #0A0A0A 55%, #050505 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: #FFFFFF;
+}
+
+.scheme-1, .scheme-3 {
+  --scheme-bg: transparent;
+  --scheme-text: #FFFFFF;
+  --scheme-muted: #A8A29A;
+  --scheme-border: #2A2418;
+  --scheme-btn-text: #0A0A0A;
+  background-color: transparent;
+  color: #FFFFFF;
+}
+
+header.scheme-3 {
+  background: #0A0A0A !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+header.scheme-3 a,
+header.scheme-3 nav a,
+header.scheme-3 span {
+  color: #FFFFFF !important;
+}
+header.scheme-3 .rr-hamburger span {
+  background: #FFFFFF !important;
+}
+
+footer.scheme-3 {
+  background-color: #0A0A0A;
+}
 
