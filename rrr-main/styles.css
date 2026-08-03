@@ -354,6 +354,16 @@ button:disabled, [role="button"][aria-disabled="true"] {
 ::selection {
   background: var(--color-mongoose-light);
   color: var(--color-neutral-darkest);
+} css
+:root {
+  --color-mongoose-lightest: #FBF5E6;
+  --color-mongoose-lighter: #F2E4C4;
+  --color-mongoose-light: #D9B65C;
+  --color-mongoose: #C9A24B;
+  --color-mongoose-dark: #A8842F;
+  --accent: #C9A24B;
+  --accent-hover: #A8842F;
+  --accent-contrast: #0A0A0A;
 }
 
 
