@@ -1,25 +1,29 @@
-/* Revive & Refine — Navbar. Desktop: floating pill on scroll + mega-menu. Mobile: full-screen frosted menu. */
+/* Mr Gleamz — Navbar. Desktop: floating pill on scroll + mega-menu. Mobile: full-screen frosted menu. */
+
+const BOOKING_URL_NAV = "https://mrgleamzz.setmore.com/";
 
 const SERVICE_MENU = [
   {
     group: "Cleaning",
     items: [
-      { icon: "wash",              label: "Valeting",          price: "from £60",  bg: "#FBF5E6", iconColor: "#B8902A" },
-      { icon: "cleaning_services", label: "Interior detail",   price: "from £80",  bg: "#FBF5E6", iconColor: "#B8902A" },
+      { icon: "wash",                       label: "Basic Wash & Maintenance", price: "from £30",  bg: "#FBF5E6", iconColor: "#B8902A" },
+      { icon: "airline_seat_recline_extra", label: "Interior Detail",          price: "from £30",  bg: "#FBF5E6", iconColor: "#B8902A" },
+      { icon: "local_car_wash",             label: "Exterior Detail",          price: "from £20",  bg: "#FBF5E6", iconColor: "#B8902A" },
     ],
   },
   {
-    group: "Polish",
+    group: "Restoration",
     items: [
-      { icon: "auto_fix",          label: "Detailing",         price: "from £150", bg: "#FBF5E6", iconColor: "#B8902A" },
-      { icon: "lens_blur",         label: "Gloss enhancement", price: "from £120", bg: "#FBF5E6", iconColor: "#B8902A" },
-      { icon: "auto_awesome",      label: "Paint correction",  price: "from £350", bg: "#FBF5E6", iconColor: "#B8902A" },
+      { icon: "auto_fix",                   label: "Full Valet / Detail",      price: "from £60",  bg: "#FBF5E6", iconColor: "#B8902A" },
+      { icon: "cleaning_services",          label: "Deep Clean / Pre-Sale",    price: "from £60",  bg: "#FBF5E6", iconColor: "#B8902A" },
+      { icon: "lens_blur",                  label: "Machine Polish",           price: "from £100", bg: "#FBF5E6", iconColor: "#B8902A" },
     ],
   },
   {
     group: "Protection",
     items: [
-      { icon: "shield",            label: "Ceramic coating",   price: "from £500", bg: "#FBF5E6", iconColor: "#B8902A" },
+      { icon: "shield",                     label: "Ceramic Coating",          price: "from £150", bg: "#FBF5E6", iconColor: "#B8902A" },
+      { icon: "workspace_premium",          label: "Masterclass",              price: "from £200", bg: "#FBF5E6", iconColor: "#B8902A" },
     ],
   },
 ];
@@ -47,7 +51,7 @@ function Navbar({ onBook, onNav, active = "Home" }) {
   }, [mobileOpen]);
 
   const handleNav = (page) => { setMobileOpen(false); onNav && onNav(page); };
-  const handleBook = () => { setMobileOpen(false); onBook && onBook(); };
+  const handleBook = () => { setMobileOpen(false); window.open(BOOKING_URL_NAV, "_blank"); };
   const openMega = () => { clearTimeout(megaTimeout.current); setMegaOpen(true); };
   const closeMega = () => { megaTimeout.current = setTimeout(() => setMegaOpen(false), 120); };
 
@@ -68,7 +72,7 @@ function Navbar({ onBook, onNav, active = "Home" }) {
           <div className="rr-nav-inner" style={{ display:"grid",gridTemplateColumns:"1fr auto 1fr",alignItems:"center",width:"100%",position:"relative" }}>
 
             <a href="#" onClick={(e)=>{ e.preventDefault(); handleNav("Home"); }} style={{ display:"flex",alignItems:"center" }}>
-              <img src="./assets/images/logo.png" alt="Revive & Refine" style={{ height:scrolled?56:90,objectFit:"contain",transition:"height 0.35s cubic-bezier(0.4,0,0.2,1)" }} />
+              <img src="./assets/images/logo.png" alt="Mr Gleamz Automotive Detailing" style={{ height:scrolled?56:90,objectFit:"contain",transition:"height 0.35s cubic-bezier(0.4,0,0.2,1)" }} />
             </a>
 
             <nav className="rr-desktop" style={{ gap:scrolled?20:28,justifyContent:"center" }}>
@@ -78,7 +82,7 @@ function Navbar({ onBook, onNav, active = "Home" }) {
                     {l} <span style={{ fontSize:10,opacity:0.6,marginTop:1 }}>▾</span>
                   </a>
                   {megaOpen && (
-                    <div style={{ position:"absolute",top:"calc(100% + 24px)",left:"50%",transform:"translateX(-50%)",background:"#fff",borderRadius:14,boxShadow:"0 8px 40px rgba(0,0,0,0.13)",border:"1px solid rgba(0,0,0,0.07)",padding:"20px 24px 16px",display:"grid",gridTemplateColumns:"repeat(3,180px)",gap:"0 24px",minWidth:580,zIndex:200,animation:"fadeInDown 0.15s ease" }}>
+                    <div style={{ position:"absolute",top:"calc(100% + 24px)",left:"50%",transform:"translateX(-50%)",background:"#fff",borderRadius:14,boxShadow:"0 8px 40px rgba(0,0,0,0.13)",border:"1px solid rgba(0,0,0,0.07)",padding:"20px 24px 16px",display:"grid",gridTemplateColumns:"repeat(3,190px)",gap:"0 24px",minWidth:600,zIndex:200,animation:"fadeInDown 0.15s ease" }}>
                       {SERVICE_MENU.map((col) => (
                         <div key={col.group}>
                           <p style={{ fontSize:11,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"var(--text-muted)",margin:"0 0 10px" }}>{col.group}</p>
@@ -118,7 +122,7 @@ function Navbar({ onBook, onNav, active = "Home" }) {
       {mobileOpen && (
         <div data-mobile-menu style={{ position:"fixed",inset:0,zIndex:200,display:"flex",flexDirection:"column",animation:"rrMenuIn 0.18s ease",backdropFilter:"blur(28px) saturate(160%)",WebkitBackdropFilter:"blur(28px) saturate(160%)",background:"rgba(235,235,240,0.88)" }}>
           <div style={{ display:"flex",alignItems:"center",justifyContent:"space-between",padding:"18px 20px 16px" }}>
-            <img src="./assets/images/logo.png" alt="Revive & Refine" style={{ height:44,objectFit:"contain" }} />
+            <img src="./assets/images/logo.png" alt="Mr Gleamz" style={{ height:44,objectFit:"contain" }} />
             <button onClick={()=>setMobileOpen(false)} aria-label="Close" style={{ background:"none",border:"none",cursor:"pointer",fontSize:22,color:"#333",lineHeight:1,padding:"4px 8px",fontWeight:300 }}>✕</button>
           </div>
 
@@ -146,12 +150,12 @@ function Navbar({ onBook, onNav, active = "Home" }) {
           </div>
 
           <div style={{ position:"absolute",bottom:0,left:0,right:0,height:64,display:"flex",borderTop:"1px solid rgba(0,0,0,0.10)",background:"rgba(235,235,240,0.97)",backdropFilter:"blur(12px)" }}>
-            <a href="tel:+441234567890" style={{ flex:1,display:"flex",alignItems:"center",justifyContent:"center",gap:8,textDecoration:"none",color:"#1a1a1a",fontSize:15,fontWeight:500,borderRight:"1px solid rgba(0,0,0,0.10)",fontFamily:"var(--font-body)" }}>
+            <a href="tel:+447462885070" style={{ flex:1,display:"flex",alignItems:"center",justifyContent:"center",gap:8,textDecoration:"none",color:"#1a1a1a",fontSize:15,fontWeight:500,borderRight:"1px solid rgba(0,0,0,0.10)",fontFamily:"var(--font-body)" }}>
               <span className="material-symbols-rounded" style={{ fontSize:19 }}>call</span>
               Call us
             </a>
             <button onClick={handleBook} style={{ flex:1,display:"flex",alignItems:"center",justifyContent:"center",gap:8,background:"none",border:"none",cursor:"pointer",color:"var(--accent)",fontSize:15,fontWeight:600,fontFamily:"var(--font-body)" }}>
-              <span className="material-symbols-rounded" style={{ fontSize:19 }}>mail</span>
+              <span className="material-symbols-rounded" style={{ fontSize:19 }}>calendar_month</span>
               Book now
             </button>
           </div>
