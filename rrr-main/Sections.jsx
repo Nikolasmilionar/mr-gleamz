@@ -8,22 +8,24 @@ function Hero({ onBook, onNav }) {
   const { Button } = window.ReviveRefineDesignSystem_38ca5a;
   const isMobile = window.useIsMobile();
   return (
-    <section className="scheme-1" style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", padding: isMobile ? "8rem 5% 0" : "12rem 5% 0", position: "relative" }}>
-      <div style={{ textAlign: "center", maxWidth: "52rem", marginBottom: "var(--space-10)" }}>
-        <h1 style={{ fontSize: isMobile ? "clamp(2.8rem, 10vw, 3.5rem)" : "clamp(3.5rem, 6.5vw, 6rem)", lineHeight: 1.05, marginBottom: "var(--space-5)", fontWeight: 800 }}>
-          <span style={{ color: "var(--scheme-text)", display: "block" }}>Your vehicle deserves</span>
-          <span style={{ color: "var(--scheme-text)", display: "block" }}>more than a wash.</span>
+    <section className="scheme-1" style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: isMobile ? "7rem 5% 4rem" : "9rem 5% 5rem", overflow: "hidden" }}>
+      <img src="./assets/images/hero.jpg" alt="Mr Gleamz Automotive Detailing" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center center", zIndex: 0 }} />
+      <div style={{ position: "absolute", inset: 0, zIndex: 1, background: "linear-gradient(180deg, rgba(10,10,10,0.82) 0%, rgba(10,10,10,0.62) 45%, rgba(10,10,10,0.94) 100%)" }} />
+      <div style={{ position: "relative", zIndex: 2, textAlign: "center", maxWidth: "52rem" }}>
+        <p style={{ fontSize: "var(--text-small)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--accent)", marginBottom: "var(--space-5)" }}>
+          Mobile detailing · Sunderland
+        </p>
+        <h1 style={{ fontSize: isMobile ? "clamp(2.6rem, 9vw, 3.4rem)" : "clamp(3.5rem, 6.5vw, 6rem)", lineHeight: 1.05, marginBottom: "var(--space-5)", fontWeight: 800, color: "#FFFFFF" }}>
+          <span style={{ display: "block" }}>Your vehicle deserves</span>
+          <span style={{ display: "block" }}>more than a wash.</span>
         </h1>
-        <p style={{ fontSize: "var(--text-medium)", color: "var(--scheme-muted)", marginBottom: "var(--space-8)" }}>
-          Mobile detailing &amp; valeting across Sunderland. Fully insured &amp; verified.
+        <p style={{ fontSize: "var(--text-medium)", color: "rgba(255,255,255,0.82)", marginBottom: "var(--space-8)", maxWidth: "36rem", marginLeft: "auto", marginRight: "auto" }}>
+          Ceramic coatings, machine polishing and full valets — brought to your driveway. Fully insured &amp; verified.
         </p>
         <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", flexWrap: "wrap", gap: "var(--space-3)" }}>
           <Button variant="primary" onClick={() => window.open(BOOKING_URL, "_blank")}>Book in online</Button>
           <Button variant="secondary" onClick={() => onNav && onNav("Services")}>Our services</Button>
         </div>
-      </div>
-      <div style={{ width: "100%", maxWidth: "56rem", borderRadius: "var(--radius-image) var(--radius-image) 0 0", overflow: "hidden", boxShadow: "0 -4px 40px rgba(0,0,0,0.10)", flexShrink: 0 }}>
-        <img src="./assets/images/hero.jpg" alt="Mr Gleamz Automotive Detailing" style={{ width: "100%", aspectRatio: "16 / 9", objectFit: "cover", objectPosition: "center 30%", display: "block" }} />
       </div>
     </section>
   );
@@ -171,7 +173,7 @@ function Gallery({ onNav }) {
   const [btnHovered, setBtnHovered] = React.useState(false);
   const images = [
     { src: "gallery-full-valet.jpg", label: "Full Valet", sub: "Inside and out, top to bottom", pos: "center center" },
-    { src: "gallery-0.jpg", label: "Machine Polish", sub: "Swirl & scratch correction", pos: "center 30%" },
+    { src: "gallery-0.jpg", label: "Machine Polish", sub: "Swirl & scratch correction", pos: "center center" },
     { src: "gallery-ceramic.jpg", label: "Ceramic Coating", sub: "Long-term paint protection", pos: "center center" },
     { src: "gallery-interior.jpg", label: "Interior Detail", sub: "Deep clean & conditioning", pos: "center center" },
   ];
