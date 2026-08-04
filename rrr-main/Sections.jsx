@@ -8,7 +8,7 @@ function Hero({ onBook, onNav }) {
   const { Button } = window.ReviveRefineDesignSystem_38ca5a;
   const isMobile = window.useIsMobile();
   return (
-    <section className="scheme-1" style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: isMobile ? "7rem 5% 4rem" : "9rem 5% 5rem", overflow: "hidden" }}>
+    <section className="scheme-1" style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: isMobile ? "7rem 5% 4rem" : "7rem 5% 4rem", overflow: "hidden" }}>
       <img src="./assets/images/hero.jpg" alt="Mr Gleamz Automotive Detailing" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center center", zIndex: 0 }} />
       <div style={{ position: "absolute", inset: 0, zIndex: 1, background: "linear-gradient(180deg, rgba(10,10,10,0.82) 0%, rgba(10,10,10,0.62) 45%, rgba(10,10,10,0.94) 100%)" }} />
       <div style={{ position: "relative", zIndex: 2, textAlign: "center", maxWidth: "52rem" }}>
