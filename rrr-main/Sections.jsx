@@ -15,7 +15,7 @@ function Hero({ onBook, onNav }) {
         <p style={{ fontSize: "var(--text-small)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--accent)", marginBottom: "var(--space-5)" }}>
           Mobile detailing · Sunderland
         </p>
-        <h1 style={{ fontSize: isMobile ? "clamp(2.6rem, 9vw, 3.4rem)" : "clamp(3.5rem, 6.5vw, 6rem)", lineHeight: 1.05, marginBottom: "var(--space-5)", fontWeight: 800, color: "#FFFFFF" }}>
+        <h1 style={{ fontSize: isMobile ? "clamp(2.6rem, 9vw, 3.4rem)" : "clamp(2.6rem, 4.5vw, 4.25rem)", lineHeight: 1.05, marginBottom: "var(--space-5)", fontWeight: 800, color: "#FFFFFF" }}>
           <span style={{ display: "block" }}>Your vehicle deserves</span>
           <span style={{ display: "block" }}>more than a wash.</span>
         </h1>
